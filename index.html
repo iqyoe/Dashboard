@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard by Kyu!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="style/style-ds.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
                     <div class="mt-3">
                         <p class="sidebar-title"> <b>Application list</b></p>
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a href="#" class="nav-link active">Apps 1</a></li>
+                            <li class="nav-item"><a href="/" class="nav-link active">Apps 1</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Apps 2</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Apps 3</a></li>
                         </ul>
@@ -25,28 +26,37 @@
             </div>
             <div class="col" id="content" style="padding-right: 0 !important; padding-left: 0 !important;">
                 <div class="navbar navbar-expand-lg navbar-light bg-red text-light">
-                    <a id="chooseApps"> <i data-feather="chevron-left" id="sidebarOpen"></i> <b>Choose Apps</b></a>
+                    <a id="chooseApps"> <i data-feather="chevron-left" id="chevronLeft"></i> <i data-feather="chevron-right" id="chevronRight" style="display: none;"></i> <b>Choose Apps</b></a>
                 </div>
                 <div class="container-fluid" id="content-body">
                     <div class="row">
                         <div class="col-8"><h1>Title Apps</h1></div>
                         <div class="col">
-                            <p><span>Baseline Calculation</span> / <span>Success Rate</span></p>
-                            <p>Presentation Mode</p>
+                            <h5><span class="text-primary"><b>Baseline Calculation</b></span> / <span>Success Rate</span></h5>
                         </div>
                     </div>
+
                     <div class="row mt-1">
                         <div class=" col card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col">
-                                        <h5>Input new data:</h5>
+                                    <div class="col-8">
+                                        <form action="" class="form-inline">
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1"><b>Input New Data File:</b></label>
+                                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            </div>
+                                            <input type="submit" value="Upload" class="btn btn-primary">
+                                        </form>
                                     </div>
-                                    <div class="col">asd</div>
+                                    <div class="col">
+                                        <p id="viewMode"><span class="p-mode">Presentation Mode</span><span class="i-mode">Investigation Mode</span></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="row mt-2">
                         <div class="col-md-8 card mr-1">
                             <div class="card-body">
@@ -55,10 +65,126 @@
                         </div>
                         <div class="col card">
                             <div class="card-body">
-                                Table Data
+                                <div class="p-mode">
+                                    <table class="table table-hover table-sm">
+                                        <tr>
+                                            <th class="bg-danger text-light">Data 1</th>
+                                            <td>Value 1</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-danger text-light">Data 1</th>
+                                            <td>Value 1</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="i-mode">
+                                    <table class="table table-hover table-sm">
+                                        <tr>
+                                            <th class="bg-danger text-light">Data 1</th>
+                                            <td>Value 1</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-danger text-light">Data 1</th>
+                                            <td>Value 1</td>
+                                            <td>Value 1</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-danger text-light">Data 1</th>
+                                            <td>Value 1</td>
+                                            <td>Value 1</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row mt-2 i-mode">
+                        <div class="col card">
+                            <div class="card-body">
+                                <table class="table table-hover table-sm" id="myTable">
+                                    <thead class="bg-red text-light">
+                                        <tr>
+                                            <th>Data 1</th>
+                                            <th>Data 2</th>
+                                            <th>Data 3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>value 1</td>
+                                            <td>value 2</td>
+                                            <td>Value 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>value 1</td>
+                                            <td>value 2</td>
+                                            <td>Value 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>value 1</td>
+                                            <td>value 2</td>
+                                            <td>Value 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>value 1</td>
+                                            <td>value 2</td>
+                                            <td>Value 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>value 1</td>
+                                            <td>value 2</td>
+                                            <td>Value 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 i-mode">
+                            <div class="col card">
+                                <div class="card-body">
+                                    <table class="table table-hover table-sm" id="myTable">
+                                        <thead class="bg-red text-light">
+                                            <tr>
+                                                <th>Data 1</th>
+                                                <th>Data 2</th>
+                                                <th>Data 3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>value 1</td>
+                                                <td>value 2</td>
+                                                <td>Value 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>value 1</td>
+                                                <td>value 2</td>
+                                                <td>Value 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>value 1</td>
+                                                <td>value 2</td>
+                                                <td>Value 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>value 1</td>
+                                                <td>value 2</td>
+                                                <td>Value 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>value 1</td>
+                                                <td>value 2</td>
+                                                <td>Value 3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -67,6 +193,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -91,9 +218,17 @@
             // Configuration options go here
             options: {}
         });
+
+         $('#myTable').DataTable();
     });
     $('#chooseApps').click(function(){
         $('#sidebar').toggle();
+        $('#chevronLeft').toggle();
+        $('#chevronRight').toggle();
+    });
+    $('#viewMode').click(function(){
+        $('.i-mode').toggle();
+        $('.p-mode').toggle();
     });
 </script>
 </body>

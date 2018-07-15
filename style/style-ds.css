@@ -2,10 +2,10 @@ body{
     max-height: 100%;
 }
 .bg-red{
-    background-color: rgba(244,67,54 ,1);
+    background-color: rgba(211,47,47 ,1);
 }
 #sidebar{
-    background-color: rgba(244,67,54 ,1);
+    background-color: rgba(211,47,47 ,1);
     height: 100vh;
     color: #fff;
 }
@@ -25,6 +25,11 @@ body{
     padding-top: 0.5em;
     padding-left: 1.5em;
     padding-right: 1.5em;
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+.i-mode {
+    display: none;
 }
 
 /* SLIDER BUTTON */
